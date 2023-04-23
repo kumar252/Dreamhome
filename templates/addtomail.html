@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/static/homebgm.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: skyblue ;
+  margin: auto;
+  width: 40%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+  <div class="w3-top">
+    <div class="w3-row w3-large w3-light-grey">
+      <div class="w3-col s3">
+        <a href="#" class="w3-button w3-block">DreamHome</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#" class="w3-button w3-block">AddToMail</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/home" class="w3-button w3-block">Back </a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/" class="w3-button w3-block">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container signin">
+        
+   
+    <h1></h1>
+  </div>  
+
+<form method="post" action="/addtomail">
+  <div class="container">
+    <h1>Mailing List</h1>
+    <p>Please fill in this form </p>
+    <hr>
+
+    <label for="clientid"><b>Client Id</b></label>
+    <input type="text" placeholder="clientid" name="clientid" id="clientid" value={{user[0]}} disabled>
+    
+
+    <label for="firstname"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" required>
+
+    <label for="lastname"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter last Name" name="lastname" id="lastname" required>
+
+    <label for="telno"><b>Telephone Number</b></label>
+    <input type="text" placeholder="Enter number" name="telno" id="telno" required>
+
+    <label for="street"><b>Street</b></label>
+    <input type="text" placeholder="Enter Street" name="street" id="street" required>
+
+    <label for="city"><b>City</b></label>
+    <input type="text" placeholder="Enter city" name="city" id="city" required>
+
+    <label for="postcode"><b>Post Code</b></label>
+    <input type="text" placeholder="Enter postcode" name="postcode" id="postcode" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter email" name="email" id="email" value={{user[3]}} disabled>
+
+    <label for="region"><b>Region</b></label>
+    <input type="text" placeholder="Enter Region" name="region" id="region" required>
+
+    <label for="pretype"><b>PreType</b></label>
+    <select id="pretype" name="pretype">
+      <option value="House">House</option>
+      <option value="Flat">Flat</option>
+    </select>
+   <!-- <input type="text" placeholder="House/Flat" name="pretype" id="pretype" required> -->
+
+    <label for="maxrent"><b>Max Rent</b></label>
+    <input type="text" placeholder="Enter max rent" name="maxrent" id="maxrent" required>
+
+    
+
+    <hr>
+    
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p><a href="/home">Cancel</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>

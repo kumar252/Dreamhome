@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DreamHome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ body {
+       background-image: url('/static/homebgm.jpg');
+       background-size: cover;
+       background-repeat: no-repeat;
+     }        
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-large w3-light-grey">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">DreamHome</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">Welcome   {{user[1]}}</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block">About</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/" class="w3-button w3-block">Logout</a>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Slideshow next/previous buttons -->
+    
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">  
+  
+  <!-- Grid -->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
+    </div>
+    
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row-padding" id="plans" >
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <h4></h4>
+        <img src="{{url_for('static', filename='viewhome.png')}}" alt="Jane" style="width:40%" >
+        <div class="w3-container">
+          <h3>Book A View</h3>
+          <p class="w3-opacity">Designer</p>
+          <p> offered by many real estate websites and apps that allows users to schedule an appointment to view a property in person.  </p>
+        </div>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="/view"><button class="w3-button w3-green w3-padding-large" >Proceed</button></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom ">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <h4></h4>
+        <img src="{{url_for('static', filename='Househome.jpg')}}" alt="Jane" style="width:40%">
+        <div class="w3-container">
+          <h3>Rentals</h3>
+          <p class="w3-opacity">Designer</p>
+          <p> User able to see their list of list of properties and their details to buy or rent their house.   </p>
+        </div>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="/rentals"><button class="w3-button w3-green w3-padding-large" >Proceed</button></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <h4></h4>
+        <img src="{{url_for('static', filename='emailhm.png')}}" alt="Jane" style="width:40%">
+        <div class="w3-container">
+          <h3>Add To Mail</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>allows users to easily add an item or product they are interested in to their email for later reference. </p>
+        </div>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="/addtomail"><button class="w3-button w3-green w3-padding-large" >Proceed</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row-padding" id="about">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Who We Are</span>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4" style="width: 70%;">
+        <img src="{{url_for('static', filename='tc.jpg')}}" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Sunil</h3>
+          <p class="w3-opacity">CEO & Founder </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4" style="width: 70%;">
+        <img src="{{url_for('static', filename='RDJ.jpg')}}" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Dylan</h3>
+          <p class="w3-opacity">Managing Director</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4" style="width: 70%;">
+        <img src="{{url_for('static', filename='OIP.jpg')}}" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>William</h3>
+          <p class="w3-opacity">Marketing Head</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- locations -->
+  <div class="w3-row w3-container" >
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Our Locations</span>
+    </div>
+    <div class="w3-col l3 m6 w3-white w3-container w3-padding-16">
+      <h4>Aberdeen</h4>
+      <p> 16 Argyll Street </p>
+      <p>AB23SU</p>
+    </div>
+ 
+    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+      <h4>Bristol</h4>
+      <p> 32 Manse Road</p>
+      <p>BS991NZ</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-green w3-container w3-padding-16">
+      <h4>Glasgow</h4>
+      <p> 163 Main Street </p>
+      <p>G119QX</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+      <h4>London</h4>
+      <p> 56 Cover Drive</p>
+      <p> NW106EU</p>
+    </div>
+
+  </div> 
+
+  <!-- Contact -->
+  
+  
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">SunilKumar</a></p>
+</footer>
+
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+
+</body>
+</html>

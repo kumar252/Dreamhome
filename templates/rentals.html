@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  background-image: url('/static/homebgm.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+.card {
+			width: 300px;
+			border: 1px solid blue;
+			padding: 10px;
+			margin: 10px;
+			float: left;
+			box-sizing: border-box;
+		}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  perspective: 1000px;
+  float:left;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-large w3-light-grey">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">DreamHome</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">Rentals Page</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/home" class="w3-button w3-block">Back</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/" class="w3-button w3-block">Logout</a>
+    </div>
+  </div>
+</div>
+
+<div class="container space">
+  <p> ""</p>
+</div>
+
+
+{% for house in data %}
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+        <img src="{{url_for('static', filename=house[9])}}" alt="Avatar" style="width:300px;height:300px;">
+        </div>
+        <div class="flip-card-back">
+        <h2>Property No: {{house[1]}}</h2> 
+        <p>Address: {{house[2]}} {{house[3]}}</p> 
+        <p>{{house[4]}}</p>
+        <p>Type: {{house[5]}}</p>
+        <p>Rent : {{house[6]}}</p>
+        <p>Staff : {{house[7]}}</p>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+<!--
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <img src="{{url_for('static', filename='home1.jpg')}}" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h2>Property No: PA14</h2> 
+                <p>Address: 16 Holhead</p> 
+                <p>Aberdeen AB7 5SU</p>
+                <p>Type: House</p>
+                <p>Rent : 650</p>
+            </div>
+    </div>
+</div>
+    
+<div class="flip-card">
+    <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <img src="{{url_for('static', filename='Images.House2.jpg')}}" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h2>Property No: PA14</h2> 
+                <p>Address: 16 Holhead</p> 
+                <p>Aberdeen AB7 5SU</p>
+                <p>Type: House</p>
+                <p>Rent : 650</p>
+            </div>
+    </div>
+</div>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <img src="{{url_for('static', filename='Images.House3.jpg')}}" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h2>Property No: PA14</h2> 
+                <p>Address: 16 Holhead</p> 
+                <p>Aberdeen AB7 5SU</p>
+                <p>Type: House</p>
+                <p>Rent : 650</p>
+            </div>
+    </div>
+</div>
+
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <img src="{{url_for('static', filename='Images.House4.jpg')}}" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h2>Property No: PA14</h2> 
+                <p>Address: 16 Holhead</p> 
+                <p>Aberdeen AB7 5SU</p>
+                <p>Type: House</p>
+                <p>Rent : 650</p>
+            </div>
+    </div>
+</div>
+
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <img src="{{url_for('static', filename='Images.House5.jpg')}}" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h2>Property No: PA14</h2> 
+                <p>Address: 16 Holhead</p> 
+                <p>Aberdeen AB7 5SU</p>
+                <p>Type: House</p>
+                <p>Rent : 650</p>
+            </div>
+    </div> 
+</div>
+-->
+
+</body>
+</html> 

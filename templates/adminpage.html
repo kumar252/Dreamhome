@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <style>
+        body {
+       background-image: url('/static/homebgm.jpg');
+       background-size: cover;
+       background-repeat: no-repeat;
+     }        
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+        </style>
+    <title>My Database Table</title>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+          <div class="w3-col s3">
+            <a href="#" class="w3-button w3-block">DreamHome</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="#" class="w3-button w3-block">Admin Page</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="#" class="w3-button w3-block"> </a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/" class="w3-button w3-block">Logout</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container signin">
+        
+        <p> h</p>
+        <h1>Mailing List</h1>
+      </div>
+
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>ClientId</th>
+                <th>FirstName</th>
+                <th>Lastname</th>
+                <th>TelNo</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>postcode</th>
+                <th>Email</th>
+                <th>Date of Join</th>
+                <th>Region</th>
+                <th>pretype</th>
+                <th>maxrent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>{{ row[10] }}</td>
+                <td>{{ row[11] }}</td>
+                <td>{{ row[12] }}</td>
+                <td>{{ row[13] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container signin">
+        
+        <h1>Property List</h1>
+      </div>    
+
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>PropertyNo</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>postcode</th>
+                <th>Type</th>
+                <th>Rent</th>
+                <th>StaffNo</th>
+                <th>BranchNo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows3 %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <div class="container signin">
+        
+        <h1>Viewing</h1>
+      </div>   
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>ClientId</th>
+                <th>PropertyNo</th>
+                <th>ViewDate</th>
+                <th>ViewHour</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows2 %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+
+
+
+
+
+    <div class="container signin">
+        
+        <h1>Clients</h1>
+      </div>   
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>ClientId</th>
+                <th>UserId</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows1 %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    
+</body>
+</html>
